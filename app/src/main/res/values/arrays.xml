@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_product_size_options">
+        <item>@string/product_size_unknown</item>
+        <item>@string/product_size_xs</item>
+        <item>@string/product_size_s</item>
+        <item>@string/product_size_m</item>
+        <item>@string/product_size_l</item>
+        <item>@string/product_size_xl</item>
+    </string-array>
+</resources>

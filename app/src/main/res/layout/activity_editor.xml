@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.chahat.inventoryapp.EditorActivity">
+
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Overview Layout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <!-- Name -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/category_name" />
+
+            <!-- Company Name -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/category_company" />
+
+            <!-- Quantity -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/category_quantity" />
+
+            <!-- Supplier Email Id -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/category_supplier_email" />
+
+
+        </LinearLayout>
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <!-- Product Name field -->
+            <EditText
+                android:id="@+id/edit_product_name"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_product_name"
+                android:inputType="textCapWords" />
+
+            <!-- Product Company field -->
+            <EditText
+                android:id="@+id/edit_product_company"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_product_company"
+                android:inputType="textCapWords" />
+
+
+            <!-- Product Quantity field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <Button
+                    android:id="@+id/add_unit"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="+" />
+
+                <EditText
+                    android:id="@+id/edit_product_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="100"
+                    android:hint="@string/hint_product_quantity"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/reduce_unit"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="-" />
+            </LinearLayout>
+
+            <!-- Supplier Email field -->
+            <EditText
+                android:id="@+id/edit_supplier_email"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_supplier_email"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Price category -->
+    <LinearLayout
+        android:id="@+id/container_product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/category_product_price"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorAccent" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Units for Price ($) -->
+            <TextView
+                android:id="@+id/label_unit_price"
+                android:layout_width="30dp"
+                android:layout_height="42dp"
+                android:layout_alignParentStart="true"
+                android:text="@string/unit_price"
+                android:textSize="35sp" />
+            <!-- Price field -->
+            <EditText
+                android:id="@+id/edit_product_price"
+                style="@style/EditorFieldStyle"
+                android:layout_toEndOf="@+id/label_unit_price"
+                android:hint="@string/hint_product_price"
+                android:inputType="number" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Product Size category -->
+    <LinearLayout
+        android:id="@+id/container_product_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/category_size"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorAccent" />
+
+        <!-- Input field -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <!-- Size drop-down spinner -->
+            <Spinner
+                android:id="@+id/spinner_product_size"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="4dp"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_image" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/saleItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="false"
+        android:text="Sale" />
+</LinearLayout>
